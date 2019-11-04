@@ -58,6 +58,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        webLinkBtn.setOnClickListener {
+            var uri = Uri.parse("http://naver.com")
+            var intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
