@@ -43,6 +43,11 @@
 
     </LinearLayout>
 
+<!--    연습문제 : 폰번을 입력 받을 액티비티 생성.-->
+<!--    이름 입력 화면과 동일한 구조. EditPhoneActivity-->
+<!--    밑의 버튼을 누르면 해당 액티비티로 이동 => 폰번 입력받고 => 돌아오자-->
+<!--    결과로 phoneNumTxt에 반영.-->
+
     <Button
         android:id="@+id/phoneNumInputBtn"
         android:layout_width="match_parent"

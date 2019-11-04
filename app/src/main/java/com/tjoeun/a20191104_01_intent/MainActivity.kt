@@ -11,10 +11,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     val REQ_CODE_FOR_NAME = 1000
+    val REQ_CODE_FOR_PHONE = 1001
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        phoneNumInputBtn.setOnClickListener {
+            var intent = Intent(this, EditPhoneNumActivity::class.java)
+            startActivityForResult(intent, REQ_CODE_FOR_PHONE)
+        }
 
         nameInputBtn.setOnClickListener {
 
@@ -51,6 +57,15 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
+            }
+        }
+        else if (requestCode == REQ_CODE_FOR_PHONE) {
+            if (resultCode == Activity.RESULT_OK) {
+                var phoneNumStr = data?.getStringExtra("inputPhoneNum")
+
+                phoneNumStr?.let {
+                    phoneNumTxt.text = phoneNumStr
+                }
             }
         }
 
